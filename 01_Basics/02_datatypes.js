@@ -1,7 +1,7 @@
 //  Primitive- 7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
 // Reference (Non primitive) - Arrays, Objects, Functions
 
-// Return type of data types in JavaScript ---------------------
+// Return type of data types in JavaScript --------------------- (for interviews)
 // 1) Primitive Datatypes
 //        Number => number
 //        String  => string
