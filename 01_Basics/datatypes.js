@@ -22,5 +22,7 @@ let state;
 // object
 
 
+//typeof can used with or withour braces i.e typeof(null) also correct or, typeof null also correct
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object
+
