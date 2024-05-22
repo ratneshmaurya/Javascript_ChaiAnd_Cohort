@@ -22,7 +22,7 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 //--------------------------Operations-------------------------------------
 
 //--------string with addition operator--------
-// string with -,*,/ converts into number
+// string with -,*,/,> converts into number (where > used during comparisons like "2">1)
 // string with + follow the left hand solving strategy
 // always left side se evaluate hona start hoga, it number then keep number, if string then string convert hota
 console.log("1" + 2);  // 12
@@ -31,7 +31,7 @@ console.log("1" + 2 + 2);  //122
 console.log(1 + 2 + "2");  //32
 
 // strings with negative sign converts into number
-// string with -,*,/ converts into number
+// string with -,*,/,> converts into number (where > used during comparisons like "2">1)
 // string with + follow the left hand solving strategy
 console.log("10"-"5");  //gives 5
 console.log("10"-"5"-3); //gives 2
