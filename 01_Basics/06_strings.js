@@ -1,5 +1,6 @@
 
 // strings in JS are object and are primitive type
+// JS arrays have length, then prototype (prototype contains functions)
 
 const myname = "ratnesh"
 const repoCount = 50
