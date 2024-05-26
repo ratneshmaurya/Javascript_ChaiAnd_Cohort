@@ -34,7 +34,8 @@ console.log(typeof null); // object
 
 //1.Object Properties:Create an object and use the Symbol as a property key. The value you assign to that property becomes associated with the Symbol.
 // In this example, the Symbol mySymbol is used as a unique key to store an object containing user data.
-const mySymbol = Symbol('user-data');
+const mySymbol = Symbol('user_data'); //The "user_data" argument is an optional description attached to the Symbol. It's not the 
+// actual value of the Symbol, but a string associated with it for potential debugging or introspection.
 const user = {
   name: 'Alice',
   [mySymbol]: { age: 30, city: 'New York' }
