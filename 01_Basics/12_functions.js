@@ -1,7 +1,7 @@
 //Topic--->
 //parameter vs arguments??, parameter are variables used with function definition, while arguments are var/values passed in function call
 //rest operator in function, Object passing in function, Array passing in function
-
+// Types of Function declaration techniques
 
 //************* sending random argument values to the function parameter
 function addTwoNumbers(number1, number2){ return number1 + number2 } 
@@ -53,3 +53,15 @@ function returnSecondValue(getArray){
 }
 console.log(returnSecondValue(myNewArray)); //passing the array name
 console.log(returnSecondValue([200, 400, 500, 1000])); //passing directly the values
+
+
+//******** Function declaration techniques -> normal function, var function, arrow function
+// Normal Function are scanned and made available globally even before the actual definition line
+// but var( or variable function) are scanned and made available globally but remains undefined before the actual definition line
+// see more in scopes.js files
+
+function user(data){} //normal function
+
+const user=function(data){} //variable function
+
+const user=(data)=>{} //arrow function
