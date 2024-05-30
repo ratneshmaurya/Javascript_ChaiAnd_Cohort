@@ -124,12 +124,12 @@ chai()
     const person = {
     name: "Alice",
     arrowFunction: () => {
-      console.log("arrow function, same execution context", this);  // gives {}, becoz arrow function rely on "this" of outer block,
+      console.log("arrow function", this);  // gives {}, becoz arrow function rely on "this" of outer block,
         // but "this" of person object means nothing (it treated as - "this" of the enclosing scope where the object was defined), since 
         // the object literal is defined in the top level module scope, this refers to the module ({}) in Node.js or window in a browser.
     },
     normalFunction: function(){
-        console.log("normal function, different execution context",this);  // gives person object values, becoz "this" of regular function 
+        console.log("normal function",this);  // gives person object values, becoz "this" of regular function 
         // will either point to object calling it or "global object" if no object is calling it
     }
   };
