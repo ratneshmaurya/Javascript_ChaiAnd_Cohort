@@ -12,7 +12,7 @@
 // content within it.
 
 
-// use querySelector() --> best than others
+// use querySelector() and querySelectorAll() --> best than others, nodelist hoti isme just remember
 // ******************* Accessing DOM Elements:
 
 document.getElementById('id') // Retrieves the element(along its nested tags) with the specified id.
