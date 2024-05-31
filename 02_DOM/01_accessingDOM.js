@@ -7,20 +7,24 @@
 // and content as a tree of objects. It allows JavaScript to access, manipulate, and interact with HTML elements 
 // and their properties, styles, and content
 
+// ***** All DOM element accessing functions(Id,TagName, querySelector, className) in JavaScript return the target element(s) along with 
+// their entire nested content. When you select an element, you get the whole subtree of that element, including any nested tags and 
+// content within it.
 
 // ******************* Accessing DOM Elements:
 
-document.getElementById('id') // Retrieves the element with the specified id. (returns whole element and its child tags)
+document.getElementById('id') // Retrieves the element(along its nested tags) with the specified id.
 
-document.getElementsByTagName('tagName') //Returns an array(**HTML collection) of all elements with the given tag name. 
+document.getElementsByTagName('tagName') //Returns an array(**HTML collection) of all elements(along its nested tags) with the given tag name. 
 // eg- ("p" for paragraph, "h1" for heading etc)
 
-document.querySelector('selector') // Uses CSS selectors to find the FIRST matching element. ("h1.specialClass", h1 with class="specialClass")
+document.querySelector('selector') // Uses CSS selectors to find the FIRST matching element(along its nested tags). ("h1.specialClass", h1 with class="specialClass")
 
-document.querySelectorAll('selector') // Similar to querySelector, but returns a (**NODELIST) containing all matching elements based on the provided CSS selector.
+document.querySelectorAll('selector') // Similar to querySelector, but returns a (**NODELIST) containing all matching elements(along its nested tags)  
+// based on the provided CSS selector.
 // ***** CSS selector means the tags, classname, ids, or selectors that we write exactly in css file to access the tags
 
-document.getElementByClassName('class') // retreives all elements as (**HTML Collection) having this class name
+document.getElementByClassName('class') // retreives all elements(along its nested tags) as (**HTML Collection) having this class name
 
 
 
