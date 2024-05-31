@@ -43,6 +43,12 @@ box.classList.add("highlighted"); // Adds the "highlighted" class
 box.classList.toggle("important"); // Toggles the "important" class (add if not present, remove if present)
 
 
+// ****** 5-) To fetch values from input tags using DOM selectors, you should use the .value property of the input elements,
+//  not innerHTML. The innerHTML property is used to get or set the HTML content inside an element, but input elements do not 
+// have inner HTML content; instead, they have values.
+<input type="text" id="name" name="name" value="John Doe"/>
+const nameValue = document.getElementById('name').value;
+
 // ********** Benefits of Using DOM:
 // Content Updates: Update content without refreshing the entire page using JavaScript and the DOM.
 // Asynchronous Operations: Fetch data from servers and dynamically add it to the DOM.
