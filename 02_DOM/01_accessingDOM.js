@@ -34,3 +34,14 @@ document.getElementByClassName('class') // retreives all elements(along its nest
 
 // HTML Collection doesnot have any iteration in prototype, thus we need to convert that into array first by --> Array.from(Collection value variable)
 // i.e we can traverse them(which we get from TagName(), ClassName() and querySelectorAll()) using above methods
+
+
+// **** Remember our general FOR Loop works for any type of collection, hence we can use For loop on HTML Collection or Nodelist also
+const parent=document.getElementsByClassName('class1');
+for(let a=0; a<parent.length;a++){ //as we have .length property for collection and Nodelist also
+    // ------
+}
+
+// ** To see the inbuilt properties and prototype of anything in JS, check on browser console
+// just run any command that gives result to that thing which you want to check
+document.getElementsByClassName('class1'); //run this and enter to check for HTML collection functionalities
