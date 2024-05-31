@@ -8,7 +8,7 @@
 // ***innerHTML gives the entire HTML content, including nested tags, attributes, and whitespace, within the selected element.
 // ***textContent Returns only the combined text content of the element and its nested descendants, but ignores HTML tags and attributes.
 //(textContent does not parse HTML. Any HTML tags are treated as literal text)
-// ***innerText retrieves or sets the text content of an element, but it also takes into account the CSS styling
+// ***innerText retrieves or sets the text content of an element and its nested descendants which are displayed, but it also takes into account the CSS styling
 //(not saying all types of attribute, only style attribute), such as display: none and line breaks.(i.e it fetches and render exactly as shown in browser)
 const heading = document.getElementById("myHeading");
 heading.innerHTML = "New Heading with <strong>emphasis</strong>";// Using innerHTML (overwrites existing content and event listeners)
