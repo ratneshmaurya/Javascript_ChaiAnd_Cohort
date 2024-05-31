@@ -11,6 +11,8 @@
 // their entire nested content. When you select an element, you get the whole subtree of that element, including any nested tags and 
 // content within it.
 
+
+// use querySelector() --> best than others
 // ******************* Accessing DOM Elements:
 
 document.getElementById('id') // Retrieves the element(along its nested tags) with the specified id.
@@ -45,3 +47,6 @@ for(let a=0; a<parent.length;a++){ //as we have .length property for collection 
 // ** To see the inbuilt properties and prototype of anything in JS, check on browser console
 // just run any command that gives result to that thing which you want to check
 document.getElementsByClassName('class1'); //run this and enter to check for HTML collection functionalities
+
+
+// use querySelector() --> best than others
