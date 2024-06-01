@@ -49,7 +49,6 @@
 
     //************** Why this project was a little unique??
     // As we are selecting parent and adding event on parent(i.e on all its child, not on a specific child)
-    // We are not doing any loop kind of things to traverse for every <li>node
 
 
 
