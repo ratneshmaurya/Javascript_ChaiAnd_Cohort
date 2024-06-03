@@ -1,5 +1,5 @@
 
-// Topic-> api, api request, http, (rest+soap+graphql..), (fetch+axios), console.log, document object
+// Topic-> api, api request, Rest, Http, (rest+soap+graphql..), (fetch+axios), console.log, document object
 
 
 
@@ -27,6 +27,11 @@
 // gRPC: High performance, uses Protocol Buffers, bi-directional streaming, strict contract, efficient serialization.
 
 
+// **************** Meaning of REST(Representational State Transfer) word by Word---->
+// A RESTful API is an architectural style for designing networked applications where data is represented in a format easily 
+// understood by clients(i.e representational in some format like JSON or XML etc), each request contains all the necessary 
+// information(i.e State of client, There's no session state stored on the server side, everytime user info is contained in the request)
+// and data transfer occurs over HTTP using standardized methods(i.e transfer).
 
 
 // ***************** What is REST VS axios,fetch,Xmlhttp???----->>>>
