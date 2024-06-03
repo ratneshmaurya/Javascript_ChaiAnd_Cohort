@@ -73,7 +73,7 @@ createUser.prototype.printMe = function(){
     console.log(`price is ${this.score}`);
 }
 
-const chai = new createUser("chai", 25); // new keyword is responsible for accessing and making prototype, else the prototype for regular function not word.
+const chai = new createUser("chai", 25); // new keyword is responsible for accessing and making prototype, else the prototype for regular function will not work.
 const tea = createUser("tea", 250); // here not using new keyword, now tea won't have any prototype functions that we made
 
 chai.printMe(); // gives price is 25
