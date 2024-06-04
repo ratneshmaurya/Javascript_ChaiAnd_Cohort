@@ -1,5 +1,12 @@
 
 
+
+// Topic- constructor vs prototype vs regular function, "new" with prototype, "new" with constructor function
+// Constructore function -> if regular function is called with "new" then it converted to constructore function
+// Prototyep function-> any function that we add in the prototype of constructor function
+// Regular function -> a normal function in JS.
+
+
 // ********** Actually JS is a prototype based language, what does it means?? se below--->
 // JavaScript does have classes. While JavaScript has been primarily a prototype-based language, the introduction of the class 
 // syntax in ECMAScript 6 (ES6) made it easier and more intuitive to create and work with objects, making it appear more like 
@@ -43,24 +50,57 @@ console.log(userOne.constructor); // gives only the refernce of above constructo
 
 
 
-// ****************** NEW keyword and prototype concept.
 
-function multipleBy5(num){
-
-    return num*5
+// ***************** Concept of "this" with new and without "new" keyword with function
+function testing(myname){
+    this.myname=myname
 }
-multipleBy5.powerVar = 2
-console.log(multipleBy5(5));
-console.log(multipleBy5.powerVar);// gievs 2, but how?? becoz of prototype(as every thing in JS have linked to Object)
-// here the prototype is of {}object for the above function, and in that space it is created the variable powerVar.
-
-console.log(multipleBy5.prototype); // gives {} in node.js.
+// here above "this" refers to newly instance of new object if "new" keyword is used while calling the function
+// if calling the function normally, then "this" will refers to "Global Object" in Node.js or "Window" in browsers.
 
 
 
 
 
-// *************** Create and add function in the Prototype of anything(below adding function in prototype of createUser function)
+// *********************Example of --> "this" concept with "new" and without "new" keyword
+function createUser(username, score){
+    this.username = username
+    this.score = score
+    console.log(this);
+}
+const chai = new createUser("chai", 25); // here "this" will access this instance of object
+
+const tea = createUser("tea", 250); // here "this" will access Global object, becoz not using "new" keyword
+
+
+
+
+
+// ************ Concept of adding prototypes for Regular and Constructor function.
+// For regular function, if we add prototype, it will not added anywhere
+// now we are adding a "prototype function" into the space of function context object, but it will show error, becoz we can't add 
+// any ptotype to function like that, either we have to add any prototype to "Object" or we have to use "new" keyword for creating
+// a new instance for function so that the prototype gets add up in the "new instance object" space. 
+function createUser(username, score){
+    this.username = username
+    this.score = score;  //here "this" referring to global Object, becoz not using "new" keyword
+}
+createUser.prototype.printMe = function(){ 
+    console.log(`price is ${this.score}`);
+}
+const tea2 = createUser("tea", 250);
+tea2.printMe(); //will give error, can't print property of undefined, becoz printMe() function doesnot addup anywhere
+
+
+// ***************** Remember, To add the prototype in function, we must need a object instance for that function, that only comes by 
+// "new" keyword, else whatever you add in the prototype of function, it is not adding anywhere, it lost. See below example also.
+//                                        | |
+//                                        | |
+//                                        | |
+//                                         *
+
+
+// *************** Create and add function in the Prototype of anything(below adding a prototype function in createUser function)
 function createUser(username, score){
     this.username = username
     this.score = score
@@ -77,15 +117,17 @@ const chai = new createUser("chai", 25); // new keyword is responsible for acces
 const tea = createUser("tea", 250); // here not using new keyword, now tea won't have any prototype functions that we made
 
 chai.printMe(); // gives price is 25
-tea.printMe(); //will give error, becoz new keywrod not used, hence can't access the man-made functions in prototype 
+tea.printMe(); //will give error, becoz new keywrod not used, hence can't access the man-made functions in prototype
+
+
+
 
 /*
 Here's what happens behind the scenes when the new keyword is used:
-
 1-) A new object is created: The new keyword initiates the creation of a new JavaScript object.
 
 2-) A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means
-that it has access to properties and methods defined on the constructor's prototype.
+that it has access to properties and methods defined on the constructor's prototype. (i.e ek new instance bana and)
 
 3-) The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created 
 object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
@@ -94,13 +136,6 @@ object. If no explicit return value is specified from the constructor, JavaScrip
 (object, array, function, etc.), the newly created object is returned.
 
 */
-
-
-
-
-
-
-
 
 
 
