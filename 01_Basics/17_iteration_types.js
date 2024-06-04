@@ -85,6 +85,7 @@ for (const [key, value] of myObject) {
 
 
 // ************* "For in" loop -> access only keys while looping (0,1,2,3 for arrays ... keys for objects... not iterable for maps)
+// if want to iterate on Objects then use For-in
 const myObject2 = {
     js: 'javascript',
     cpp: 'C++',
