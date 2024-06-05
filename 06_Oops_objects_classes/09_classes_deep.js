@@ -1,8 +1,22 @@
 
 
+
+
 // In JavaScript, instance variables (also known as instance properties) can be defined within classes, and they are specific to each 
 // instance of the class. Prior to ES6, JavaScript didn't have a formal class syntax, but with the introduction of ES6, the class 
 // syntax provides a more straightforward way to define classes and their instance variables.
+
+
+
+// The functions inside the classes are defined normally without any colon----> 
+// display(){----} normally used in Classes  
+// display:function{----} used to define functions in Objects, but in modern Objects(nowdays), we can simply write functions also in Objects same as above in class
+// display(){----} also accepted nowdays in modern JS for defining functions in objects(without colon)
+
+
+
+
+
 
 // Here’s how you can define and use instance variables in a class:
 
