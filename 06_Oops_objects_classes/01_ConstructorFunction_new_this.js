@@ -33,6 +33,11 @@
 // }
 // We can write either by functions or by classes (if using new keyword for making instances, then its the same thing for both cases)
 
+// Remember we are not writing instance varibale separately here(as we do in c++ or java) here this.username already make a username
+// variable that is only attached to a specific instance of object
+// Although we can create instance variable same as in java or c++ --> class user{ let name="ratn"; constructore(name){this.name=name}}
+// See more in class.js file
+
 function User(username, loginCount, isLoggedIn){
     this.username = username;
     this.loginCount = loginCount;
