@@ -2,10 +2,10 @@
 // Dates are object types in js (asked in interviews)
 
 let myDate = new Date()
-console.log(myDate.toString());
-console.log(myDate.toDateString());
-console.log(myDate.toLocaleString());
-console.log(typeof myDate);
+console.log(myDate.toString()); //Thu Jun 06 2024 13:43:28 GMT+0000 (Coordinated Universal Time)
+console.log(myDate.toDateString()); //Thu Jun 06 2024
+console.log(myDate.toLocaleString()); //6/6/2024, 1:43:28 PM
+console.log(typeof myDate); //object
 
 
 //defining dates on a specific value (not so important)
@@ -13,7 +13,7 @@ let myCreatedDate = new Date(2023, 0, 23)
 let myCreatedDate2 = new Date(2023, 0, 23, 5, 3)
 let myCreatedDate3 = new Date("2023-01-14")
 let myCreatedDate4 = new Date("01-14-2023")
-console.log(myCreatedDate4.toLocaleString());
+console.log(myCreatedDate4.toLocaleString()); //1/14/2023, 12:00:00 AM
 
 //************** FOR INTERVIEWS ------------------- */
 let myTimeStamp = Date.now() //gives in milliseconds from 1970
