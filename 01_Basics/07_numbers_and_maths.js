@@ -16,6 +16,8 @@ console.log(otherNumber.toPrecision(4)); // now it says from left side se, we mu
 const hundreds = 1000000 //(10 lakhs)
 console.log(hundreds.toLocaleString()); //gives output in US format using comma 1,000,000
 console.log(hundreds.toLocaleString('en-IN')); //gives output in indian format with commas- 10,00,000
+// toLocaleString() also used in dates api, to give date in string format in indian style <date><time>
+
 
 // +++++++++++++ Maths +++++++++++++++++++++++++++++
 
