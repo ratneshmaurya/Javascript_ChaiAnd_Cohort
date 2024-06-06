@@ -17,6 +17,7 @@ function createUser(username, email, password){
     // SetUsername.call(username);---> this will not pass this function context
     SetUsername.call(this, username) // this will pass current context also, and now the above function setUsername's this will act like
     // it is the this of this current function createUser(), thus on completing the SetUsername(), the property's value still remained
+    // i.e doesnot lost the value even the context of SetUsername function lost over.
    
     this.email = email
     this.password = password
