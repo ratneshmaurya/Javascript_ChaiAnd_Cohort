@@ -10,7 +10,8 @@ console.log(otherNumber.toPrecision(4)); // now it says from left side se, we mu
 // eg- for 123.67 it gives- 123.7 (rounded of the 4th digit if possible)
 // eg- for 1245.345 it will give 1245 (rounded of the 4th digit if possible)
 // eg- for 1245.745 it will give 1246 (rounded of the 4th digit if possible)
-// eg- for 1123.89 it will give 1.12e+3 (as it have to display only 3 digits to output, but we have a larger number than 3 digits hence giving in expo form)
+// eg- for 1123.89 with precision(3) it will give 1.12e+3 (as it have to display only 3 digits to output, but we have a larger number than 
+// 3 digits hence giving in expo form)
 
 const hundreds = 1000000 //(10 lakhs)
 console.log(hundreds.toLocaleString()); //gives output in US format using comma 1,000,000
