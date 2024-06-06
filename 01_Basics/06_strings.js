@@ -31,11 +31,31 @@ console.log(gameName.indexOf('t'));
 
 console.log(gameName.split('-'));
 
-const newString = gameName.substring(0, 4)
+// substring(start,end)--> gives from start to end-1 index
+const newString = gameName.substring(0, 4) // depreciated function, now slice() used 
 console.log(newString);
 
-const anotherString = gameName.slice(-8, 4)  //if given negative then it starts from end
-console.log(anotherString);
+// slice(start,end)--> gives from start to end-1 index
+console.log(gameName.slice(2,4))// gives string from 2nd index to 3rd index
+console.log(gameName.slice(-8, 4)) // gives"" (empty string, if given negative then it starts from end
+// startIndex is -1. In JavaScript, a negative startIndex means counting from the end of the string. -1 refers to the last character ('h').
+// endIndex is 4, so the extraction stops before the fifth character ('e').
+// When the startIndex is greater than or equal to the endIndex after normalization (adjusting negative indices), slice returns an empty string. 
+// Since the normalized startIndex (6, referring to 'h') is greater than endIndex (4), the output is: ""
+
+
+// ********* Then how to fecth reverse string??
+// To fetch a substring in reverse order in JavaScript, you can't use the slice method directly because it doesn't support extracting 
+// characters in reverse order. However, you can achieve this by combining slice or substring with string manipulation methods like 
+// split, reverse, and join.
+let s = "ratnesh";
+let extracted = s.slice(1, 4); // "atn"
+let reversed = extracted.split('').reverse().join(''); // "nta"
+console.log(reversed); // Output: "nta"
+// split('') splits the string into an array of characters.
+// reverse() reverses the array.
+// join('') joins the array back into a string.
+
 
 const newStringOne = "   hitesh    "
 console.log(newStringOne);
