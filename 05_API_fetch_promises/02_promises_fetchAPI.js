@@ -61,8 +61,19 @@ const myPromise = new Promise((resolve, reject) => {
   
 // ***************** Ways to write promises----->
 // can also use arrow functions instead of regular function anywhere
+// It returns values(i.e a Promise to .then() or .catch() function.)
+// Thus .then() and .catch() must have the callbacks in their arguments to receive either resolve or reject function from promise.
+// Promises created using the Promise constructor using --> new Promise((resolve,reject)=>{}), i.e it also takes callback as paramter
+// Promise constructor takes a function, which also takes a resolve function as 1st parameter, and reject function as 2nd
+// .then(()=>{}) will only run when the resolve() function inside the Promise run, and if resolve("hey") have argument, then .then((data)=>{}) recieves like this.
 
-// Promise having only .then() and resolve()
+// How to make more than 1 async functions call sequenctially using Promises?
+// step-1) First of all both asyn function must have Promises returned in their functions
+// step-2) Inside the .then() of first function, we can return second function call, this will move to next chained .then()
+
+
+
+// Ex of -> Promise having only .then() and resolve()
 const promiseOne = new Promise(function(resolve, reject){
     // Do an async task
     // DB calls, cryptography, network
@@ -77,7 +88,7 @@ promiseOne.then(function(){
 })
 
 
-// Promise having only.then() and resolve()
+// Ex of -> Promise having only.then() and resolve()
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
@@ -90,7 +101,7 @@ new Promise(function(resolve, reject){
 
 
 
-// Passing arguments in resolve call
+// Ex of -> Passing arguments in resolve call
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve({username: "Chai", email: "chai@example.com"})
