@@ -3,6 +3,10 @@
 // If want to execute only one async task, then can direclty write setTimeout, File-Read, or other async tasks. 
 // If not using any Asyn work, then donot use these, becoz no use-case
 
+
+// Topics---> Callbacks, Callbacks hell, Promises, Promises Chain, Asyn-await
+
+
 // we need Async function when these cases arises-->
 // Network call
 // DB call
@@ -71,7 +75,7 @@
 // step-1) First of all both asyn function must have Promises returned in their functions
 // step-2) Inside the .then() of first function, we can return second function call, this will move to next chained .then()
 // Here both asyn are not dependent on each like in callbacks, here we are just calling them one-by-one by order we want.
-
+// **** Here we are doing promises chain, as running one async function only after other.
 
     function firstFunction() {
         return new Promise((resolve, reject) => {
