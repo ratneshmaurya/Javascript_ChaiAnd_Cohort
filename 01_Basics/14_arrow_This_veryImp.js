@@ -143,6 +143,7 @@ chai()
 // ****************** Arrow function writing types-------------->>
 // if using curly braces then must need return keyword to return something, 
 // if using paranthesis() then no need of return keyword it auto returns all
+// last tip helpful, if want to return an object, becoz that already have curly braces
 
 const addTwo1 = (num1, num2) => { return num1 + num2 } // as curly braces need return to return something (explicit return)
 
