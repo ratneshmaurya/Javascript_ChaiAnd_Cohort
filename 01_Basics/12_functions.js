@@ -3,7 +3,22 @@
 //rest operator in function, Object passing in function, Array passing in function
 // Types of Function declaration techniques
 
-//************* sending random argument values to the function parameter
+
+// -------------MAIN FOR FUNCTIONS ------------ OTHER THAN JAVA C++.
+// In JavaScript, 
+// let, const, and var are only used inside the function body, not in the parameter list.
+
+// This is invalid syntax: function combine(let a, let b, let c)
+
+// Parameters are already treated like variables automatically.
+// Correct version:
+
+function combine(a, b, c) {
+  return (a * b) / c;
+}
+
+
+//************* -------- sending random argument values to the function parameter
 function addTwoNumbers(number1, number2){ return number1 + number2 } 
 addTwoNumbers(3, 'a')// then 3a output becoz string+number ho rha
 addTwoNumbers(3, "ratn")// then 3ratn becoz string+number ho rha, don't say error hoga
