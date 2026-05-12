@@ -41,7 +41,7 @@
     firstFunction(secondFunction); //callback hell, as calling function is also typical.
 
 
-
+    // So to avoid this callback hell, wee can use like nesting the functions.
     // This is nested async function (but also runs sequentially like above)--->
     // But not a callback hell.(But writing nested function is also a overhead)
     function run(){
@@ -57,6 +57,13 @@
     run(); // here just calling the outer function, but it also runs inner function, after 2sec, when the outer finished
 
 
+    // PROBLEM OF CALLBACK HELL :
+    // Code buggy hota
+    // Also hrr function ke actual code me hume callback ko call krne ka line likhna pdega, 
+    // eg this line - callback('First function executed successfully');
+    // hence control hum function ko de rhe hai ki tum call kroge
+    // So issiliye promise aaya, iss callback hell se bachane ke liye
+    // and using this hum control bhi function ko nahi dete hai, hum hi define krte hai using .then().
 
 
 
