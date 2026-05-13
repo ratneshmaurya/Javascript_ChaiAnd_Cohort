@@ -41,7 +41,7 @@ setUser(user)
 // 💡 Isliye React bolta:
 // “reference badla? => toh maybe data badla”
 
-// ---------------------------------------------------------------------------
+// ----------------------------------Shallow Copy In React Need-----------------------------------------
 // 🧠 3. React state update flow
 const [user, setUser] = useState({
   name: "Ratnesh"
@@ -50,8 +50,7 @@ const [user, setUser] = useState({
 // Wrongly doing mutation
 user.name = "Aman"
 setUser(user)
-// Kya hua?
-// 👉 SAME reference 😵
+// Kya hua? 👉 SAME reference 😵
 oldUser === newUser // true
 // 👉 React bolega: “same object hai” 👉 maybe skip re-render ❌
 
