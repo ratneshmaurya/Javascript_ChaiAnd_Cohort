@@ -19,7 +19,7 @@ let heroPower = {
         console.log(`Spidy power is ${this.spiderman}`);
     }
 }
-heroPower.hitesh(); //can access Ratnesh() function easily
+heroPower.Ratnesh(); //can access Ratnesh() function easily
 
 
 // Adding prototype to a Array object, now any array in JS will have this property.
