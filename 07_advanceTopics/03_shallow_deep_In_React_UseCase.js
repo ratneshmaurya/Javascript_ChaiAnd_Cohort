@@ -23,6 +23,14 @@ console.log(a === b)
 // Output: false
 // 👉 same values, BUT different references
 
+// For primitives:
+setCount(5)
+// 👉 React compares values. So re-render ho jaaega easily apne aap on value changes.
+
+// For objects:
+setUser(user)
+// 👉 React compares references. so shallow copy needed else refernce same rahega and no re-render on object value changes
+
 // ----------------------------------------------------------------------------
 // 🔥 2. Why React uses shallow/reference compare?
 // Because deep compare expensive 😵
@@ -47,7 +55,7 @@ setUser(user)
 oldUser === newUser // true
 // 👉 React bolega: “same object hai” 👉 maybe skip re-render ❌
 
-// 🔥 Correct way = shallow copy
+// 🔥 ---------------- Correct way = shallow copy
 // Shallow copy kab use karte?
 // 👉 jab: state var humara => object/array type ho and usko change karna ho
 
