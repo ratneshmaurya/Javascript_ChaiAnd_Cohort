@@ -42,6 +42,7 @@ setUser(user)
 // “reference badla? => toh maybe data badla”
 
 // ----------------------------------Shallow Copy In React Need-----------------------------------------
+// Use of spread Operator for shallow copy, must use when object/array in useState() used ho.
 // 🧠 3. React state update flow
 const [user, setUser] = useState({
   name: "Ratnesh"
