@@ -10,8 +10,7 @@
 
 
 // -------------------------------------------------------------------------------
-// 🧠 1. React actual me kya compare karta hai?
-
+// React actual me kya compare karta hai?
 // 👉 React: deep compare nahi karta.
 // 👉 React mostly: reference compare ✔ karta hai.
 
@@ -41,42 +40,67 @@ setUser(user)
 // 💡 Isliye React bolta:
 // “reference badla? => toh maybe data badla”
 
-// ----------------------------------Shallow Copy In React Need-----------------------------------------
+// ----------------------------------Shallow Copy(SPREAD OPERATOR) In React Need-----------------------------------------
 // Use of spread Operator for shallow copy, must use when object/array in useState() used ho.
-// 🧠 3. React state update flow
+
+// creating the object values in useState
 const [user, setUser] = useState({
   name: "Ratnesh"
 })
 
-// Wrongly doing mutation
+// if changing the value of object like this:
 user.name = "Aman"
 setUser(user)
-// Kya hua? 👉 SAME reference 😵
+// SAME reference, becoz we changed the same object value
 oldUser === newUser // true
-// 👉 React bolega: “same object hai” 👉 maybe skip re-render ❌
+// React bolega: “same object hai” 👉 maybe skip re-render ❌
 
 // 🔥 ---------------- Correct way = shallow copy
 // Shallow copy kab use karte?
-// 👉 jab: state var humara => object/array type ho and usko change karna ho
+// jab: state var humara => object/array type ho and usko change karna ho
+// using spread operator means creating the new object with new reference, 
+// so React can detect the change and re-render the component efficiently.
 
 setUser({
   ...user,   // here doing spread operator, so creating new object
   name: "Aman"
 })
 
-// 🧠 Now
+// Now
 oldUser !== newUser
 // ✔ new reference
+// React bolega: “new object aaya” ✔ re-render
 
-// 👉 React bolega: “new object aaya” ✔ re-render
 
-// --------------------------------------------------------------------------
-// 💣 4. Why shallow copy enough?
+// ----------------------------Nested Object me How to do Copying of object------------------------------------------------
+// 🔥 Why shallow copy important?
+// Because:
+// it creates NEW top-level reference
+// React can detect changes cheaply
 
-// Because React usually only checks top-level reference.
-// ⚡ Example
-oldState !== newState
-// 👉 enough for React.
+const [user, setUser] = useState({
+  userDetails: {
+    name: "Ratnesh",
+    age:10,
+  }
+})
+const newState = { ...user }
+newState.userDetails.name = "Aman"
+
+// nested object same 😵
+// React may re-render parent ✔
+// BUT: memoized children, selectors, Redux optimizations break ho sakte hain.
+
+// 💡 Correct nested update, using spread at each nested object also
+const newState = {
+  ...state,
+  userDetails: {
+    ...state.userDetails,
+    name: "Aman"
+  }
+}
+
+
 
 // --------------------------------React.Memo---------------------------------------
 // “useMemo tb use krna hai jb parent re-render pr dubara function/object na change ho”
@@ -109,50 +133,32 @@ const user = useMemo(() => {
   return { name: "Ratnesh" }
 }, [])
 
-// 👉 now: same reference ✔
-// ⚡ Parent re-render
+// now: same reference ✔
+// Parent re-render
 // oldUser === newUser
 
-// 👉 React.memo: “same props”, child skip render
-
-// ----------------------------Nested Object me How to do Copying of object------------------------------------------------
-
-// 🔥 Why shallow copy important?
-// Because:
-// it creates NEW top-level reference
-// React can detect changes cheaply
-// ⚠️ BUT nested mutation dangerous
-
-const newState = { ...state }
-newState.user.name = "Aman"
-
-// 👉 nested object same 😵
-// React may re-render parent ✔
-// BUT: memoized children, selectors, Redux optimizations break ho sakte hain.
-
-// 💡 Correct nested update, using spread at each nested object also
-const newState = {
-  ...state,
-  user: {
-    ...state.user,
-    name: "Aman"
-  }
-}
+// React.memo: “same props”, child skip render
 
 // ------------------------------------------------------------------------------------
 // 🎯 Final big picture
 // Shallow copy → new reference → React detects change → re-render
-//  whenever we have to update state that is object/array, we should create 
+// whenever we have to update state that is object/array, we should create 
 // a new copy of it using shallow copy techniques (spread operator, Object.assign, array methods) 
 // to ensure React detects the change and re-renders the component efficiently.
 
-//  and useMemo and useCallback just for memoization.
 
-// 💥 Killer line
-// React relies on shallow reference comparison because it is fast. 
-// Creating shallow copies allows React to efficiently detect state and prop changes 
-// without expensive deep comparisons.
+// ------------------------------------------------------ Use of useMemo and Spread Operator
+// Suppose parent have an object defined like this:
+const user = {
+  name: "Ratnesh"
+}
+// now on every render of parent this object will be recreated and will have a new reference, 
+// so if we pass this object as a prop to child component, then child component will re-render 
+// on every render of parent component.
+// To avoid this we can use useMemo hook to memoize the object and only create a new reference
+// when the dependencies change. (also child is created using React.memo to avoid unnecessary re-rendering)
+// This is to ensure same object ho then no re-render please. 
 
-// 🧠 Simple yaad trick
-// new reference = React notices
-// same reference = React thinks same data
+// Now what if the object value changes, then to ensure React will detect the changes
+// we use Spread operator so that it create a new object and re-redner happens for child as well. 
+// so changes in Object -> Shallow copy with spread operator -> new reference -> React detects change -> re-render child component.
